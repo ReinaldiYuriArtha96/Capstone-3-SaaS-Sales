@@ -99,7 +99,7 @@ This analysis focuses on generating actionable insights to support data-driven b
 
 3. **Open the analysis notebook**  
 Use Jupyter Notebook, Google Colab, or VSCode to open:  
-- Capstone 3 Final 01082025.ipynb or Capstone 3 Eng.ipynb
+- Capstone 3 Eng.ipynb
 
 4. **Follow the analysis workflow**  
 - Data preprocessing and exploratory analysis  
