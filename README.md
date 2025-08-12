@@ -1,111 +1,112 @@
-# Analisis Penjualan SaaS – Capstone 3
+# SaaS Sales Analysis – Capstone 3
 
-## Tentang Bisnis
-Proyek ini menganalisis kinerja penjualan dari sebuah perusahaan SaaS (Software as a Service) B2B yang menawarkan berbagai produk perangkat lunak kepada beragam segmen pelanggan. 
+## About the Business  
+This project analyzes sales performance of a B2B SaaS company offering various software products to diverse customer segments.  
 ---
 
-## Deskripsi Proyek  
-Proyek ini bertujuan untuk melakukan analisa mendalam terhadap data penjualan SaaS untuk mengeksplorasi perilaku pelanggan, profitabilitas produk, serta efektivitas diskon. Tujuannya adalah memberikan strategi berbasis data untuk meningkatkan revenue, retensi, dan efisiensi operasional.
+## Project Description  
+The aim is to conduct a deep-dive analysis on SaaS sales data to explore customer behavior, product profitability, and discount effectiveness. The goal is to deliver data-driven strategies to improve revenue, retention, and operational efficiency.
 
 ---
-## Tujuan Analisis
-Analisis ini bertujuan untuk menghasilkan wawasan yang mendalam untuk mendukung keputusan bisnis berbasis data, dengan fokus pada:
--	Mengidentifikasi segmen pelanggan bernilai tinggi melalui RFM dan Customer Lifetime Value (CLV)
--	Mengevaluasi efisiensi dan margin keuntungan dari masing-masing produk
--	Mengkaji dampak dari strategi diskon terhadap penjualan dan profitabilitas
--	Menganalisis tren musiman dan harian untuk optimasi waktu promosi
--	Menemukan outlier yang mempengaruhi distribusi penjualan dan profit
--	Mengukur tingkat churn untuk masing-masing segmen pelanggan
+## Analysis Objectives  
+This analysis focuses on generating actionable insights to support data-driven business decisions, specifically to:  
+- Identify high-value customer segments via RFM and Customer Lifetime Value (CLV)  
+- Evaluate product efficiency and profit margins  
+- Assess the impact of discount strategies on sales and profitability  
+- Analyze seasonal and daily trends to optimize promotion timing  
+- Detect outliers affecting sales and profit distribution  
+- Measure churn rates across customer segments  
 
 ---
-## Urgensi Proyek
+## Project Urgency
 
-### Margin Tipis Meskipun Revenue Tinggi
-- Banyak produk dengan volume penjualan tinggi namun margin keuntungan sangat rendah atau bahkan negatif. Ini mengindikasikan perlunya analisis strategis terhadap struktur harga dan diskon.
-### Ketergantungan pada Diskon
-- Diskon besar sering kali digunakan untuk mendorong penjualan, namun berdampak langsung pada profitabilitas. 
-### Segmen Pelanggan Belum Dimaksimalkan
-- Segmentasi pelanggan seperti SMB memiliki potensi revenue jangka panjang besar, namun belum dioptimalkan dari sisi efisiensi dan loyalitas.
-### Produk Potensial Terabaikan
-- Beberapa produk dengan margin tinggi justru memiliki volume penjualan rendah.
-### Pentingnya Data dalam Pengambilan Keputusan
-- Perusahaan SaaS perlu pendekatan yang berbasis data untuk merancang strategi promosi, retensi pelanggan, dan pengembangan produk
-
----
-
-## Stakeholder yang Terlibat
-
-| Tim / Fungsi           | Manfaat Insight                                                                                |
-|------------------------|-----------------------------------------------------------------------------------------------|
-| Sales                  | Strategy segmentasi pelanggan dan peluang upsell berdasarkan data revenue dan margin               |
-| Marketing              | Persona pelanggan dan data churn untuk kampanye yang lebih efektif per segmen                 |
-| Finance                | Pemahaman margin dan profit driver untuk mendukung penetapan harga yang sesuai dengan nilai pelanggan|
-| Product                | Guideline pengembangan fitur dan tier produk dari perilaku pengguna                            |
-| Customer Success       | Strategi onboarding dan re-engagement untuk menurunkan churn di segmen bernilai tinggi         |
+### Thin Margins Despite High Revenue  
+- Many high-volume products show very low or negative profit margins, highlighting the need to review pricing and discount strategies.  
+### Dependency on Discounts  
+- Heavy discounting drives sales but directly impacts profitability.  
+### Untapped Customer Segment Potential  
+- Segments like SMB show strong long-term revenue potential but lack efficiency and loyalty optimization.  
+### Overlooked High-Margin Products  
+- Some high-margin products have low sales volumes, signaling missed growth opportunities.  
+### Data-Driven Decision Making is Crucial  
+- SaaS companies require data-driven approaches to design effective promotions, customer retention, and product development strategies.
 
 ---
 
-## Ringkasan Dataset  
+## Stakeholders Involved
 
-- **Ukuran:** 9.994 baris data dengan lebih dari 40 fitur  
-- **Sumber Data:** Transaksi penjualan, profil pelanggan, dan detil produk  
-- **Cakupan Analisis:** Segmentasi pelanggan, CLV, diskon dan margin produk, tren musiman, dan outlier  
-- **Catatan Khusus:** Terdapat data outlier baik pendapatan tinggi maupun transaksi rugi yang akan dibahas secara mendetail
-
----
-
-## Temuan Utama dan Analisis  
-
-- **Segmentasi Pelanggan:** Segmen SMB menyumbang lebih dari 50% total revenue, namun mencatat margin profit terendah. Sebaliknya, segmen Enterprise menunjukkan efisiensi profitabilitas tertinggi per pelanggan
-- **RFM dan CLV analysis:** Skor Recency dan Frequency pelanggan umumnya tinggi, sejalan dengan Customer Lifetime Value (CLV) yang mencapai hingga $36K. Mayoritas pelanggan termasuk dalam segmen Loyal dan Others, menandakan potensi retensi jangka panjang
-- **Efisiensi Produk:** Produk seperti ContactMatcher dan FinanceHub memiliki volume penjualan tinggi namun margin negatif. Sebaliknya, produk Alchemy dan Data Smasher menunjukkan margin tinggi meski volume rendah, ini membuka peluang untuk strategi promosi yang lebih agresif.
-- **Profit Margin & Diskon:** Diskon di atas 30% secara konsisten dikaitkan dengan margin negatif dan volatilitas profit yang tinggi. Diskon di bawah 10% merupakan zona aman, menjaga profitabilitas tanpa mengorbankan volume penjualan secara signifikan
-- **Tren Waktu:** Penjualan memuncak pada bulan Oktober hingga Desember, serta hari Kamis, khususnya pada awal dan akhir tahun. Namun, profit cenderung stagnan sejak 2021, mengindikasikan potensi inefisiensi biaya atau penurunan margin
-- **Outlier:** Terdapat lebih dari 100 transaksi bernilai di atas $10.000 yang menaikkan rata-rata revenue. Terdapat data diskon ekstrem (50–70%) menjadi kontributor utama kerugian. 
-- **Churn per Segment:** Tingkat churn rata-rata hanya sekitar 3%, mencerminkan strategi retensi yang efektif. Namun, segmen Strategic mencatat churn tertinggi (3,5%), menimbulkan kekhawatiran mengingat nilai pelanggan yang tinggi. Segmen SMB memiliki churn terendah dan paling stabil.
+| Team / Function      | Insight Benefits                                                            |
+|---------------------|------------------------------------------------------------------------------|
+| Sales               | Customer segmentation strategy and upsell opportunities based on revenue and margin data  |
+| Marketing           | Customer personas and churn data to improve targeted campaigns per segment  |
+| Finance             | Margin and profit driver insights to support pricing aligned with customer value |
+| Product             | Guidance for feature development and product tiering based on user behavior  |
+| Customer Success    | Onboarding and re-engagement strategies to reduce churn in high-value segments |
 
 ---
 
-## Rekomendasi Strategis  
+## Dataset Summary  
 
-1. Batasi Diskon Maksimal 20%. Untuk menjaga stabilitas margin, tetapkan batas diskon maksimum pada 20%. Pantau ketat diskon ekstrem di atas 30%, terutama pada produk yang menunjukkan profit negatif.
-2. Tingkatkan Cross-Selling dan Bundling Produk Margin Tinggi. Fokus pada strategi cross-sell dan bundling untuk produk dengan margin tinggi seperti Alchemy dan Data Smasher, guna meningkatkan profitabilitas tanpa perlu volume tinggi.
-3. Perkuat Retensi di Segmen Strategic. Implementasikan program onboarding yang proaktif dan value realization yang terukur untuk segmen Strategic, yang memiliki CLV tinggi namun churn relatif lebih besar.
-4. Optimalkan Promosi Berdasarkan Pola Musiman. Sinkronkan kampanye promosi dengan periode penjualan tertinggi di bulan Oktober hingga Desember dan hari Kamis, namun hindari ketergantungan pada diskon besar untuk menjaga margin. 
-5. Kelola Risiko dan Peluang Outlier. Identifikasi dan pantau transaksi outlier dengan nilai tinggi (> $10K) maupun kerugian besar, guna mengelola risiko dan mengungkap peluang targeted upselling.
-6. Optimalkan Strategi untuk Pelanggan SMB. Kurangi ketergantungan pada diskon besar di segmen SMB, dan arahkan pelanggan ke produk premium serta layanan otomatisasi untuk mendorong peningkatan margin dan efisiensi. 
+- **Size:** 9,994 rows with over 40 features  
+- **Data Sources:** Sales transactions, customer profiles, product details  
+- **Scope:** Customer segmentation, CLV, discount & margin analysis, seasonal trends, and outlier detection  
+- **Special Notes:** Includes high-value and loss-making outliers analyzed in detail
 
 ---
 
-## Tools dan Teknologi
-- **Python**: Untuk data wrangling, analisis, dan visualisasi
-- **Jupyter Notebook**: Dokumentasi dan eksplorasi interaktif
-- **Pandas, NumPy**: Manipulasi dan analisis data
-- **Seaborn, Plotly, Matplotlib**: Visualisasi eksploratif dan interaktif
-- **Scikit-Learn**: Segmentasi pelanggan dan analisis prediktif
-- **Looker Studio**: Dashboard visual untuk stakeholder
-- **Figma Slides**: Presentasi hasil temuan
+## Key Findings and Analysis  
+
+- **Customer Segmentation:** SMB segment accounts for over 50% of total revenue but records the lowest profit margins. Enterprise segment shows the highest profit efficiency per customer.  
+- **RFM and CLV Analysis:** Customers generally score high in Recency and Frequency, aligned with CLV values up to $36K. Most customers fall into Loyal and Others segments, indicating retention potential.  
+- **Product Efficiency:** Products like ContactMatcher and FinanceHub have high sales volumes but negative margins. Conversely, Alchemy and Data Smasher have high margins but low sales, representing growth opportunities.  
+- **Profit Margin & Discounts:** Discounts over 30% consistently correlate with negative margins and profit volatility. Discounts below 10% maintain profitability without significantly reducing sales volume.  
+- **Timing Trends:** Sales peak from October to December and on Thursdays, especially early and late in the year. However, profits have stagnated since 2021, suggesting inefficiencies or margin erosion.  
+- **Churn by Segment:** Average churn rate is about 3%, reflecting effective retention strategies. Strategic segment has the highest churn (3.5%), raising concerns given their high customer value. SMB segment shows the lowest and most stable churn.
 
 ---
-## Cara Penggunaan `.ipynb`
 
-1. **Siapkan Python**  
-   Pastikan Python 3.10 atau lebih baru sudah terinstal.
+## Strategic Recommendations  
 
-2. **Install dependensi**  
-   Jalankan perintah berikut di terminal:
+1. **Cap Discounts at 20%.** Maintain discount limits to preserve margin stability. Monitor and control discounts above 30%, especially on products with negative profits.  
+2. **Boost Cross-Selling and Bundling of High-Margin Products.** Focus on cross-sell and bundling strategies for high-margin products like Alchemy and Data Smasher to increase profitability without relying on volume.  
+3. **Strengthen Retention in Strategic Segment.** Implement proactive onboarding and measurable value realization programs for the Strategic segment, which has high CLV but elevated churn.  
+4. **Optimize Promotions Based on Seasonality.** Align campaigns with peak sales periods (October–December, Thursdays) while avoiding over-reliance on heavy discounts to protect margins.  
+5. **Manage Outlier Risks and Opportunities.** Identify and track high-value transactions and large loss deals to mitigate risks and uncover targeted upselling potential.  
+6. **Refine SMB Strategy.** Reduce dependence on steep discounts in SMB segment and encourage upgrades to premium products and automated services to improve margin and efficiency.
+
+---
+
+## Tools and Technologies  
+- **Python:** Data wrangling, analysis, and visualization  
+- **Jupyter Notebook:** Interactive documentation and exploration  
+- **Pandas, NumPy:** Data manipulation and analysis  
+- **Seaborn, Plotly, Matplotlib:** Exploratory and interactive visualizations  
+- **Scikit-Learn:** Customer segmentation and predictive analysis  
+- **Looker Studio:** Visual dashboards for stakeholders  
+- **Figma Slides:** Presentation of findings  
+
+---
+
+## How to Use the `.ipynb`
+
+1. **Prepare Python Environment**  
+   Ensure Python 3.10 or newer is installed.
+
+2. **Install Dependencies**  
+   Run the following command in the terminal:  
    ```bash
    pip install pandas numpy matplotlib seaborn plotly scikit-learn
-3. **Buka notebook analisis**  
-Gunakan Jupyter Notebook, Google Colab, atau VSCode untuk membuka:
-- Capstone 3 Final 01082025.ipynb
-4. **Ikuti alur analisis berikut**
-- Praproses dan eksplorasi data
-- Segmentasi pelanggan (RFM dan CLV)
-- Evaluasi diskon, margin, dan profit
-- Analisis churn dan outlier
-- Insight dan rekomendasi
 
+3. **Open the analysis notebook**  
+Use Jupyter Notebook, Google Colab, or VSCode to open:  
+- Capstone 3 Final 01082025.ipynb or Capstone 3 Eng.ipynb
+
+4. **Follow the analysis workflow**  
+- Data preprocessing and exploratory analysis  
+- Customer segmentation (RFM and CLV)  
+- Evaluation of discounts, margins, and profitability  
+- Churn and outlier analysis  
+- Insights and strategic recommendations
 
 ---
 
@@ -120,4 +121,3 @@ Gunakan Jupyter Notebook, Google Colab, atau VSCode untuk membuka:
 [Capstone 3 –Enhancing SaaS Revenue through Data Driven Sales and Customer Analytics (Google Looker Studio)](https://lookerstudio.google.com/reporting/c582073a-22dd-4d03-a820-edfcb5c507aa)
 
 ---
-
